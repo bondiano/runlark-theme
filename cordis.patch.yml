@@ -1,0 +1,11 @@
+# Слой bundle-плагина темы Runlark.
+#
+# Установщик DSH читает `dsh.bundle.patch` из package.json и монтирует эту
+# запись сам. Отключить тему, не удаляя пакет, можно переопределением строки
+# в cordis.patch.yml профиля:
+#
+#   - id: runlark-theme
+#     disabled: true
+- insert:
+    - id: runlark-theme
+      name: "@dev-platform/runlark-theme"

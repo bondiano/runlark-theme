@@ -1,0 +1,24 @@
+{
+  "externals": [
+    "react"
+  ],
+  "modules": [
+    "node_modules/.pnpm/xstate@5.33.4/node_modules/xstate/dist/StateMachine-ae06a22b.esm.js",
+    "node_modules/.pnpm/xstate@5.33.4/node_modules/xstate/dist/assign-1f0d7720.esm.js",
+    "node_modules/.pnpm/xstate@5.33.4/node_modules/xstate/dist/log-6a5e50a8.esm.js",
+    "node_modules/.pnpm/xstate@5.33.4/node_modules/xstate/dist/raise-effbee0c.esm.js",
+    "node_modules/.pnpm/xstate@5.33.4/node_modules/xstate/dist/xstate-actors.esm.js",
+    "node_modules/.pnpm/xstate@5.33.4/node_modules/xstate/dist/xstate-dev.esm.js",
+    "node_modules/.pnpm/xstate@5.33.4/node_modules/xstate/dist/xstate.esm.js",
+    "src/client/AppearanceThemeRow.tsx",
+    "src/client/index.ts",
+    "src/client/locales.ts",
+    "src/client/theme-layer.ts",
+    "src/client/theme.machine.ts",
+    "src/client/tokens.ts"
+  ],
+  "dynamicImports": [],
+  "chunks": [
+    "client.js"
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "name": "@dev-platform/runlark-theme",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Runlark theme for DeepSeek Harness: a theme row in Settings → General → Appearance that paints the client with the Runlark ink, paper and gold palette.",
+  "type": "module",
+  "icon": "./icon.svg",
+  "license": "MIT",
+  "engines": {
+    "dsh": "0.2.2-rc.3",
+    "node": ">=24"
+  },
+  "main": "./lib/index.js",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "lib/client.graph.json",
+    "src/index.ts",
+    "src/settings.ts",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "PROVENANCE.md",
+    "VERIFICATION.md",
+    "data/runlark-ui-tokens.json"
+  ],
+  "scripts": {
+    "build": "node scripts/build.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "pnpm run build && vitest run",
+    "test:unit": "vitest run"
+  },
+  "dependencies": {
+    "@deepseek-ai/schemastery": "3.19.0",
+    "xstate": "5.33.4"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "4.1.0",
+    "@deepseek-ai/dsh-client-locale": "0.2.2-rc.3",
+    "@deepseek-ai/dsh-client-ui-renderer": "0.2.2-rc.3",
+    "@deepseek-ai/dsh-client-ui-settings": "0.2.2-rc.3",
+    "@deepseek-ai/dsh-client-ui-slots": "0.2.2-rc.3",
+    "@deepseek-ai/dsh-client-ui-theme": "0.2.2-rc.3",
+    "@deepseek-ai/dsh-settings": "0.2.2-rc.3",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "4.1.0",
+    "@deepseek-ai/dsh-client-locale": "0.2.2-rc.3",
+    "@deepseek-ai/dsh-client-ui-renderer": "0.2.2-rc.3",
+    "@deepseek-ai/dsh-client-ui-settings": "0.2.2-rc.3",
+    "@deepseek-ai/dsh-client-ui-slots": "0.2.2-rc.3",
+    "@deepseek-ai/dsh-client-ui-theme": "0.2.2-rc.3",
+    "@deepseek-ai/dsh-settings": "0.2.2-rc.3",
+    "@types/node": "24.19.2",
+    "@types/react": "18.3.31",
+    "@types/react-dom": "18.3.7",
+    "@types/react-test-renderer": "18.3.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-test-renderer": "18.3.1",
+    "tsdown": "0.23.7",
+    "typescript": "7.0.2",
+    "vitest": "3.2.7"
+  },
+  "meta": {
+    "title": "Runlark Theme",
+    "description": "Adds the Runlark palette to Settings → General → Appearance as a theme choice."
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-theme",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-renderer",
+        "@deepseek-ai/dsh-client-locale"
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bondiano/runlark-theme.git"
+  }
+}

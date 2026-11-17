@@ -1,0 +1,41 @@
+{
+  "color": {
+    "ink": "#20232B",
+    "ground": "#F3F4F6",
+    "paper": "#FFFFFF",
+    "muted": "#646B79",
+    "breadcrumb": "#596475",
+    "rule": "#DFE2E8",
+    "controlBorder": "#D4D8E0",
+    "cardBorder": "#DCE1E9",
+    "sidebar": "#20232B",
+    "sidebarSurface": "#2B2F39",
+    "sidebarBorder": "#30343E",
+    "sidebarText": "#E0E4EB",
+    "sidebarMuted": "#AEB7C7",
+    "accent": "#EDB830",
+    "attentionWash": "#FBF2D8",
+    "decisionPaper": "#FFFCF3",
+    "decisionBorder": "#C6A143",
+    "success": "#2E7D4F",
+    "successText": "#286D45",
+    "successWash": "#E3F1E8",
+    "danger": "#C0392B",
+    "dangerText": "#A12D22",
+    "dangerWash": "#F8E4E1",
+    "unknown": "#5B6475",
+    "unknownWash": "#EBEEF3"
+  },
+  "palette": [
+    "#FFFCF3",
+    "#FBF2D8",
+    "#F8E8B0",
+    "#F3D77A",
+    "#EFC84F",
+    "#EDB830",
+    "#D7A326",
+    "#B88A1F",
+    "#916C18",
+    "#6B5012"
+  ]
+}
