@@ -1,6 +1,6 @@
 {
   "name": "@dev-platform/runlark-theme",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "description": "Runlark theme for DeepSeek Harness: a theme row in Settings → General → Appearance that paints the client with the Runlark ink, paper and gold palette.",
   "type": "module",
