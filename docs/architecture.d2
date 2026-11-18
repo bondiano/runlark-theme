@@ -1,0 +1,33 @@
+direction: down
+
+# runlark-theme: token layer switched from the Host settings form, applied in the web client
+
+ops_build: "scripts/build.ts + tsdown.config.ts\n[lib/index.js ESM + lib/client.js CJS]"
+host_half: "src/index.ts apply\n[ctx.inject settings, auto: false]"
+config_schema: "Config selection\n[Schemastery, namespace runlark-theme]"
+settings_svc: "settings.configure\n[dsh-settings service]"
+form: "ctx.configForms.get\n[runlark-theme form]"
+mf_client: "src/client/index.ts\n[__ModuleLoader__ chunk, inject 4 services]"
+locale_dep: "ctx.locale\n[ru + en dictionaries]"
+slot_row: "AppearanceThemeRow\n[settings.general.item slot, React]"
+theme_layer: "ThemeLayer\n[one overrideTokens layer]"
+dag_thememachine: "themeLayerMachine\n[mirror of machines/runlark-theme.mjs]"
+xstate_dep: "xstate 5.33.4\n[alwaysBundle into client chunk]"
+tokens: "RUNLARK_TOKENS\n[27 color tokens, light + dark]"
+db_palette: "data/runlark-ui-tokens.json\n[Runlark palette source]"
+theme_svc: "ctx.theme.overrideTokens\n[dsh-client-ui-theme service]"
+
+ops_build -> host_half: "host ESM build"
+ops_build -> mf_client: "client bundle, react external"
+host_half -> settings_svc: "auto: false keeps namespace, no page"
+host_half -> config_schema: "declares selection schema"
+form -> config_schema: "namespace runlark-theme"
+mf_client -> form: "subscribes to accepted value"
+mf_client -> locale_dep: "registers ru and en"
+mf_client -> slot_row: "registers theme row, order 10.5"
+mf_client -> theme_layer: "applies confirmed selection"
+theme_layer -> dag_thememachine: "themeLayerNext transitions"
+dag_thememachine -> xstate_dep: "state machine model"
+theme_layer -> tokens: "values for the layer"
+tokens -> db_palette: "colors taken from Runlark data"
+theme_layer -> theme_svc: "overrideTokens + dispose"
